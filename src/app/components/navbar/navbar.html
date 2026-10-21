@@ -1,0 +1,23 @@
+<header class="navbar">
+  <div class="nav-inner container">
+    <a routerLink="/" class="logo" (click)="closeMenu()">
+      The <span>Brotherhood</span>
+    </a>
+
+    <button
+      class="menu-toggle"
+      (click)="toggleMenu()"
+      [attr.aria-expanded]="menuOpen()"
+      aria-label="Toggle menu">
+      {{ menuOpen() ? '✕' : '☰' }}
+    </button>
+
+    <nav [class.open]="menuOpen()">
+      <a routerLink="/" routerLinkActive="active"
+         [routerLinkActiveOptions]="{ exact: true }" (click)="closeMenu()">Home</a>
+      <a routerLink="/about" routerLinkActive="active" (click)="closeMenu()">About</a>
+      <a routerLink="/events" routerLinkActive="active" (click)="closeMenu()">Events</a>
+      <a routerLink="/contact" class="btn nav-cta" (click)="closeMenu()">Join Us</a>
+    </nav>
+  </div>
+</header>

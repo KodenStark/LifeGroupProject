@@ -1,0 +1,80 @@
+.navbar {
+  background: var(--color-dark);
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 3px solid var(--color-accent);
+}
+
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 70px;
+}
+
+.logo {
+  font-family: var(--font-heading);
+  font-size: 1.6rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  text-decoration: none;
+  span { color: var(--color-accent); }
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+
+  a:not(.btn) {
+    text-decoration: none;
+    font-weight: 600;
+    opacity: 0.85;
+    padding: 6px 0;
+    border-bottom: 2px solid transparent;
+    transition: opacity 0.2s, border-color 0.2s;
+
+    &:hover { opacity: 1; }
+    &.active { opacity: 1; border-color: var(--color-accent); }
+  }
+}
+
+.nav-cta { padding: 8px 18px; }
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+/* ---------- Phones ---------- */
+@media (max-width: 768px) {
+  .menu-toggle { display: block; }
+
+  nav {
+    display: none;
+    position: absolute;
+    top: 73px;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    gap: 0;
+    background: var(--color-dark-soft);
+    padding: 12px 16px 20px;
+
+    &.open { display: flex; }
+
+    a:not(.btn) {
+      width: 100%;
+      padding: 14px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .nav-cta { margin-top: 14px; text-align: center; width: 100%; }
+  }
+}
