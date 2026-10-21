@@ -1,1 +1,52 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+  --color-dark: #1c2430;
+  --color-dark-soft: #2a3544;
+  --color-accent: #f26b1d;
+  --color-accent-hover: #d9590f;
+  --color-light: #f7f4ef;
+  --color-text: #222;
+  --color-muted: #6b7280;
+
+  --font-heading: 'Oswald', sans-serif;
+  --font-body: 'Inter', sans-serif;
+
+  --radius: 10px;
+  --max-width: 1100px;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  color: var(--color-text);
+  background: var(--color-light);
+  line-height: 1.6;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-heading);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  line-height: 1.2;
+}
+
+a { color: inherit; }
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.btn {
+  display: inline-block;
+  background: var(--color-accent);
+  color: white;
+  padding: 12px 24px;
+  border-radius: var(--radius);
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.2s, transform 0.2s;
+  &:hover { background: var(--color-accent-hover); transform: translateY(-2px); }
+}/* You can add global styles to this file, and also import other style files */
